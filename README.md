@@ -25,14 +25,6 @@ All services are deployed inside a custom Kubernetes namespace: `**vote**`.
 3. The **Worker App** retrieves votes from Redis and pushes them to **PostgreSQL**.
 4. The **Result App** reads from PostgreSQL and displays live results.
 
-```mermaid
-graph TD;
-    A[User] --> B[Vote App];
-    B --> C[Redis];
-    C --> D[Worker App];
-    D --> E[PostgreSQL];
-    E --> F[Result App];
-
 ## 📦 Container Images Used
 
 | Component       | Image                                       |
@@ -56,16 +48,24 @@ graph TD;
 > Ensure your Kubernetes cluster (Minikube, kind, or any cloud provider) is running.
 
 1. **Create the Namespace**:
-```bash
+```
 kubectl create namespace vote
+```
+
 2. **Apply All YAML Files**:
-```bash
-kubectl apply -f . -n vote
+```
+kubectl create -f voting-app-deployment.yaml
+kubectl create -f voting-app-service.yaml
+kubectl create -f result-app-deployment.yaml
+kubectl create -f result-app-service.yaml
+kubectl create -f redis-deployment.yaml
+kubectl create -f redis-service.yaml
+kubectl create -f postgres-deployment.yaml
+kubectl create -f postgres-service.yaml
+kubectl create -f worker-app-deployment.yaml
+```
 
 
----
-
-```markdown
 ## 📊 Final Output
 
 Once deployed successfully:
