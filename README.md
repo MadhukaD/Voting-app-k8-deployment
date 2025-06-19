@@ -45,7 +45,7 @@ All services are deployed inside a custom Kubernetes namespace: `**vote**`.
 
 ## 🧪 How to Deploy
 
-> Ensure your Kubernetes cluster (Minikube, kind, or any cloud provider) is running.
+Ensure your Kubernetes cluster (Minikube, kind, or any cloud provider) is running.
 
 1. **Create the Namespace**:
 ```
