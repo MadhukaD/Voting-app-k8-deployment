@@ -105,5 +105,6 @@ kubectl port-forward --address 0.0.0.0 svc/result 7081:8081
 - The flag `--address 0.0.0.0` allows access from outside the localhost (e.g., your browser).
 
 Now you can access the apps using `http://<EC2PublicIp>:7080` for voting app and `http://<EC2PublicIp>:7081` for result app.
+
 ![K8's project](https://github.com/user-attachments/assets/39cd164b-9790-407c-b440-d863b31933fa)
 
