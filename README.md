@@ -65,6 +65,12 @@ kubectl create -f postgres-service.yaml
 kubectl create -f worker-app-deployment.yaml
 ```
 
+Now check whether the deployments and services are deployed correctly. Make sure all are in `READY` state.
+
+```
+kubectl get deployments
+kubectl get services
+```
 
 ## 📊 Final Output
 
